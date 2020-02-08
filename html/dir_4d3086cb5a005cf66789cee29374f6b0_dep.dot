@@ -1,0 +1,21 @@
+digraph "target_ATXMEGA32A4" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_4d3086cb5a005cf66789cee29374f6b0 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_4d3086cb5a005cf66789cee29374f6b0.html"];
+    dir_4d3086cb5a005cf66789cee29374f6b0 [shape=plaintext label="target_ATXMEGA32A4"];
+    dir_59fc7b9d3e2229cf2f09cfa33e6db08c [shape=box label="A7" color="black" fillcolor="white" style="filled" URL="dir_59fc7b9d3e2229cf2f09cfa33e6db08c.html"];
+    dir_ef1119bcc657aee2631dbe10ed278891 [shape=box label="EEP" color="black" fillcolor="white" style="filled" URL="dir_ef1119bcc657aee2631dbe10ed278891.html"];
+    dir_3e0ca7cb7299d4857ef720dca536dab1 [shape=box label="GENERAL" color="black" fillcolor="white" style="filled" URL="dir_3e0ca7cb7299d4857ef720dca536dab1.html"];
+    dir_542572e8d37375c3f3369ee7fe6371f6 [shape=box label="GPIO" color="red" fillcolor="white" style="filled" URL="dir_542572e8d37375c3f3369ee7fe6371f6.html"];
+    dir_b415c1329a3be6b5d729d7077c955632 [shape=box label="Resources" color="black" fillcolor="white" style="filled" URL="dir_b415c1329a3be6b5d729d7077c955632.html"];
+    dir_c8a9b24e70ca0c90adeff1774c546ea7 [shape=box label="SYSCLK" color="black" fillcolor="white" style="filled" URL="dir_c8a9b24e70ca0c90adeff1774c546ea7.html"];
+    dir_d35678748af7132c48a06c0dd42869aa [shape=box label="UART" color="red" fillcolor="white" style="filled" URL="dir_d35678748af7132c48a06c0dd42869aa.html"];
+  }
+  dir_3e0ca7cb7299d4857ef720dca536dab1->dir_c8a9b24e70ca0c90adeff1774c546ea7 [headlabel="1", labeldistance=1.5 headhref="dir_000003_000007.html"];
+  dir_3e0ca7cb7299d4857ef720dca536dab1->dir_d35678748af7132c48a06c0dd42869aa [headlabel="1", labeldistance=1.5 headhref="dir_000003_000008.html"];
+  dir_3e0ca7cb7299d4857ef720dca536dab1->dir_59fc7b9d3e2229cf2f09cfa33e6db08c [headlabel="1", labeldistance=1.5 headhref="dir_000003_000001.html"];
+  dir_3e0ca7cb7299d4857ef720dca536dab1->dir_542572e8d37375c3f3369ee7fe6371f6 [headlabel="1", labeldistance=1.5 headhref="dir_000003_000004.html"];
+  dir_542572e8d37375c3f3369ee7fe6371f6->dir_c8a9b24e70ca0c90adeff1774c546ea7 [headlabel="1", labeldistance=1.5 headhref="dir_000004_000007.html"];
+}

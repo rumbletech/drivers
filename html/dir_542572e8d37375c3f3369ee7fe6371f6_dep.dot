@@ -1,0 +1,15 @@
+digraph "target_ATXMEGA32A4/GPIO" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_4d3086cb5a005cf66789cee29374f6b0 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="target_ATXMEGA32A4" fontname="Helvetica", fontsize="10", URL="dir_4d3086cb5a005cf66789cee29374f6b0.html"]
+  subgraph clusterdir_542572e8d37375c3f3369ee7fe6371f6 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_542572e8d37375c3f3369ee7fe6371f6.html"];
+    dir_542572e8d37375c3f3369ee7fe6371f6 [shape=plaintext label="GPIO"];
+    dir_cdeb3da6cbc6366e04ba8fa2bc4684c3 [shape=box label="gpio_debug" color="black" fillcolor="white" style="filled" URL="dir_cdeb3da6cbc6366e04ba8fa2bc4684c3.html"];
+  }
+  }
+  dir_c8a9b24e70ca0c90adeff1774c546ea7 [shape=box label="SYSCLK" URL="dir_c8a9b24e70ca0c90adeff1774c546ea7.html"];
+  dir_cdeb3da6cbc6366e04ba8fa2bc4684c3->dir_c8a9b24e70ca0c90adeff1774c546ea7 [headlabel="1", labeldistance=1.5 headhref="dir_000005_000007.html"];
+}

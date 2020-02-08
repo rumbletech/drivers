@@ -71,16 +71,7 @@ $(function() {
 <div class="title">GPIO.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for GPIO.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="GPIO_8h__incl.png" border="0" usemap="#target__ATXMEGA32A4_2GPIO_2GPIO_8h" alt=""/></div>
-<map name="target__ATXMEGA32A4_2GPIO_2GPIO_8h" id="target__ATXMEGA32A4_2GPIO_2GPIO_8h">
-</map>
-</div>
+<div class="textblock"><code>#include &quot;../GENERAL/header.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -90,6 +81,41 @@ Macros</h2></td></tr>
 <tr class="memitem:a67dd416d23493b3d2ae6819e90577119"><td class="memItemLeft" align="right" valign="top"><a id="a67dd416d23493b3d2ae6819e90577119"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>OUTPUT_SRL_MASK</b>&#160;&#160;&#160;0B10000000  /** Slew Rate limit mask  , must be logically or-ed with the opconfig of the pin .*/</td></tr>
 <tr class="separator:a67dd416d23493b3d2ae6819e90577119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e4ec2a14adaeda4579dd9852779b06"><td class="memItemLeft" align="right" valign="top"><a id="a98e4ec2a14adaeda4579dd9852779b06"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>INT0_CLEAR_MASK</b>&#160;&#160;&#160;0B11111100</td></tr>
+<tr class="separator:a98e4ec2a14adaeda4579dd9852779b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7712be92260bec971b4400bffa294bac"><td class="memItemLeft" align="right" valign="top"><a id="a7712be92260bec971b4400bffa294bac"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>INT1_CLEAR_MASK</b>&#160;&#160;&#160;0B11110011</td></tr>
+<tr class="separator:a7712be92260bec971b4400bffa294bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d3fb8a5608ee1b02773dae2dffea35"><td class="memItemLeft" align="right" valign="top"><a id="a47d3fb8a5608ee1b02773dae2dffea35"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VPORTA</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a47d3fb8a5608ee1b02773dae2dffea35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a35271969de51cc113d9b40d206baf"><td class="memItemLeft" align="right" valign="top"><a id="ad3a35271969de51cc113d9b40d206baf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VPORTB</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ad3a35271969de51cc113d9b40d206baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d86e10390499cd1b1e2efa347eb636"><td class="memItemLeft" align="right" valign="top"><a id="af6d86e10390499cd1b1e2efa347eb636"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VPORTC</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:af6d86e10390499cd1b1e2efa347eb636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392c4720c336ed267936117af215fb09"><td class="memItemLeft" align="right" valign="top"><a id="a392c4720c336ed267936117af215fb09"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VPORTD</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a392c4720c336ed267936117af215fb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d9d98d701103237aad600a6fc226f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPIO_8h.html#a63d9d98d701103237aad600a6fc226f7">vport_write</a>(PORT,  VAL)&#160;&#160;&#160;PORT.OUT = VAL   /** RMW , WRITES VAL TO VPORT SPECIFIED BY PORT */</td></tr>
+<tr class="separator:a63d9d98d701103237aad600a6fc226f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5678becf3b5f84f3e68ff9bd53123644"><td class="memItemLeft" align="right" valign="top"><a id="a5678becf3b5f84f3e68ff9bd53123644"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>vport_read</b>(PORT)&#160;&#160;&#160;PORT.IN 			    /** RETURNS 8 BIT <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6ae310c909d76b003d016bef8bdf16936a">INPUT</a> PORT VALUE READ FROM VPORT SPECIFIED BY PORT */</td></tr>
+<tr class="separator:a5678becf3b5f84f3e68ff9bd53123644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4808f71386704e336ce573bde3f7f769"><td class="memItemLeft" align="right" valign="top"><a id="a4808f71386704e336ce573bde3f7f769"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>vport_wrdir</b>(PORT,  VAL)&#160;&#160;&#160;PORT.DIR = VAL  	/** RMW , WRITES VAL TO VPORT DIRECTION REGISTER , SPECIFIED BY PORT */</td></tr>
+<tr class="separator:a4808f71386704e336ce573bde3f7f769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c1c9bc6ebaccd2937b94d3880a8fa2"><td class="memItemLeft" align="right" valign="top"><a id="a81c1c9bc6ebaccd2937b94d3880a8fa2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>vport_rflags</b>(PORT)&#160;&#160;&#160;PORT.INTFLAGS         /** RETURNS INTERRUPT FLAGS OF VPORT SPECIFIED BY PORT THE 2 LSBS ARE VITAL , THE REST ARE RESERVED */</td></tr>
+<tr class="separator:a81c1c9bc6ebaccd2937b94d3880a8fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa49a555e10ce2d3e265df9c55bb5f4"><td class="memItemLeft" align="right" valign="top"><a id="a0aa49a555e10ce2d3e265df9c55bb5f4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>vport_set_pin</b>(PORT,  pin_num)&#160;&#160;&#160;PORT.OUT |= ( 1 &lt;&lt; pin_num ) /** RMW , setsa pin */</td></tr>
+<tr class="separator:a0aa49a555e10ce2d3e265df9c55bb5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401241ae67c6710463bfc4de69be8959"><td class="memItemLeft" align="right" valign="top"><a id="a401241ae67c6710463bfc4de69be8959"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>vport_clear_pin</b>(PORT,  pin_num)&#160;&#160;&#160;PORT.OUT &amp;= ~ ( 1 &lt;&lt; pin_num ) /**RMW , clears a pin*/</td></tr>
+<tr class="separator:a401241ae67c6710463bfc4de69be8959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -136,14 +162,14 @@ else&#160;</td><td class="memItemRight" valign="bottom"><b>if</b> (pin_mask &gt;
 Variables</h2></td></tr>
 <tr class="memitem:a0d15a015daeedf1d6354a6cb30a186f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPORT__struct.html">PORT_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>port_t</b></td></tr>
 <tr class="separator:a0d15a015daeedf1d6354a6cb30a186f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad58f83f681ce016061f03153f9f97f8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPIO_8h.html#ad58f83f681ce016061f03153f9f97f8d">pin_dir</a></td></tr>
-<tr class="separator:ad58f83f681ce016061f03153f9f97f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37e9b64ed1e8144b54b38e3ed1feb99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPIO_8h.html#ad37e9b64ed1e8144b54b38e3ed1feb99">pin_dir</a></td></tr>
+<tr class="separator:ad37e9b64ed1e8144b54b38e3ed1feb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a140f72ac9ceb4e3e32931900744297e4"><td class="memItemLeft" align="right" valign="top"><a id="a140f72ac9ceb4e3e32931900744297e4"></a>
 <a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a> <a class="el" href="GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880">opcconfig</a>&#160;</td><td class="memItemRight" valign="bottom"><b>output_config</b></td></tr>
 <tr class="separator:a140f72ac9ceb4e3e32931900744297e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d2e6041032cceea305612b7eced3f9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a> <a class="el" href="GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880">opcconfig</a> <a class="el" href="GPIO_8h.html#aac1670a58a22de6af7ddd5aecf55bfe7">iscconfig</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sense_config</b></td></tr>
 <tr class="separator:a4d2e6041032cceea305612b7eced3f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08944960ef99ecae7d533394fc762745"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GPIO_8h.html#ad58f83f681ce016061f03153f9f97f8d">pin_dir</a>(port_t-&gt;DIRSET=(1&lt;&lt; pin_num)) <a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a>&#160;</td><td class="memItemRight" valign="bottom"><b>port_dir</b></td></tr>
+<tr class="memitem:a08944960ef99ecae7d533394fc762745"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GPIO_8h.html#ad37e9b64ed1e8144b54b38e3ed1feb99">pin_dir</a>(port_t-&gt;DIRSET=(1&lt;&lt; pin_num)) <a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPIO_8h.html#a08944960ef99ecae7d533394fc762745">port_dir</a></td></tr>
 <tr class="separator:a08944960ef99ecae7d533394fc762745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a673049129685e8d07212ed3249cd253c"><td class="memItemLeft" align="right" valign="top"><a id="a673049129685e8d07212ed3249cd253c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>PORTCFG_MPCMASK</b> = pin_mask</td></tr>
@@ -154,11 +180,59 @@ Variables</h2></td></tr>
 <tr class="memitem:a58cb766c934f17509c363a83d7f82950"><td class="memItemLeft" align="right" valign="top"><a id="a58cb766c934f17509c363a83d7f82950"></a>
 *uint8_t *port_t&#160;</td><td class="memItemRight" valign="bottom"><b>i</b> = ( output_config ) | ( sense_config )</td></tr>
 <tr class="separator:a58cb766c934f17509c363a83d7f82950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d014a237a7f2c45f36426cc22628bb"><td class="memItemLeft" align="right" valign="top"><a id="a76d014a237a7f2c45f36426cc22628bb"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>int1mask</b></td></tr>
+<tr class="separator:a76d014a237a7f2c45f36426cc22628bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d04804d541f91e1dc3307cb4b6301df"><td class="memItemLeft" align="right" valign="top"><a id="a9d04804d541f91e1dc3307cb4b6301df"></a>
+port_t&#160;</td><td class="memItemRight" valign="bottom"><b>INT1MASK</b> = int1mask</td></tr>
+<tr class="separator:a9d04804d541f91e1dc3307cb4b6301df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a905c521e05ec8042631a912b71d0454e"><td class="memItemLeft" align="right" valign="top"><a id="a905c521e05ec8042631a912b71d0454e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>temp</b> = port_t-&gt;INTCTRL</td></tr>
+<tr class="separator:a905c521e05ec8042631a912b71d0454e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab988427c0d818795ef2d868da5fd0c7"><td class="memItemLeft" align="right" valign="top"><a id="aab988427c0d818795ef2d868da5fd0c7"></a>
+temp &amp;port_t&#160;</td><td class="memItemRight" valign="bottom"><b>INTCTRL</b> = temp | pr_level</td></tr>
+<tr class="separator:aab988427c0d818795ef2d868da5fd0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Author : Mohamed Yousry Mohamed Rashad</p>
 <p>File Discription : This is a header file that will include , most Port IO operation calls on the target mcu = ATXMEGA32A4 if another microcontroller is chosen in the the same family ATXMEGAXXA4 then the file is probably compatible , just change the gcc command -mmcu = ATXMEGAXXXA4 , and hopefully it will compile . </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a63d9d98d701103237aad600a6fc226f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d9d98d701103237aad600a6fc226f7">&#9670;&nbsp;</a></span>vport_write</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define vport_write</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">PORT, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">VAL&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;PORT.OUT = VAL   /** RMW , WRITES VAL TO VPORT SPECIFIED BY PORT */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>VIRTUAL PORTS The following inlines should be used when vport_map_init() is called , because the vports use memory mapped i/o , it uses IN/OUT instrcutions and is faster than normal calls that use LDI/STS commands . However they do not suppport bit sit and bit clear like normal ports so the calls are made as macros to distinguish . DESCRIPTION : FOR THESE FUNCTIONS USE </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>PORT : ( VPORT0,VPORT1,VPORT2,VPORT3 ) OR USE ANY OF THE NON VIRTUAL PORTS . </td></tr>
+    <tr><td class="paramname"></td><td>VAL : UINT8_T . </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="aac1670a58a22de6af7ddd5aecf55bfe7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac1670a58a22de6af7ddd5aecf55bfe7">&#9670;&nbsp;</a></span>iscconfig</h2>
 
@@ -275,19 +349,149 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void : returns nothing </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void : returns nothing</dd></dl>
+<p>Description : Sets a pin ( non rmw ). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_num</td><td>: pin number . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return . .</dd></dl>
+<p>Description : Clears a pin ( non rmw ). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_num</td><td>: pin number . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : toggles a pin ( non rmw ). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_num</td><td>: pin number . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : returns a pin value either high or low . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_num</td><td>: pin number . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: returns pin value ( 1 for high ) ( 0 for low ).</dd></dl>
+<p>Description : writes an 8 bit val to a port ( rmw ). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_val</td><td>: value of the PORT to be written. </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : reads an input port value . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: returns the value of the PORT read from the IN register.</dd></dl>
+<p>Description : sets bit in an 8 bit val (non rmw ) , bits that are not specified in port_val are not affected . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_val</td><td>: value of the PORT to be written. </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : clears bits in an 8 bit val (non rmw ) , bits that are not specified in port_val are not affected . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_val</td><td>: value of the PORT to be written. </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : toggles bits in an 8 bit val (non rmw ) , bits that are not specified in port_val are not affected . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_val</td><td>: value of the PORT to be written. </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : Changes the direction of the port pin , it doesn't affect other pins. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_num</td><td>: pin number. </td></tr>
+    <tr><td class="paramname">pin_dir</td><td>: direction of the pin . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : Changes the direction of multiple pins , pins written to 1 are changed , others are unaffected. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_val</td><td>: mask that specifies bits to change direction. </td></tr>
+    <tr><td class="paramname">pin_dir</td><td>: direction of the pins. </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : Changes the direction of multiple pins , pins written to 1 are outputes , THE REST ARE INPUTS.. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_val</td><td>: mask that specifies bits to change direction , 1 &gt;&gt; OUTPUT , 0 &gt;&gt; INPUT . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Description : Writes Interrupt0 and Interrupt1 masks , INT0 is triggered by pins that correspond to written 1's in the mask . same is for INT1 . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int0mask</td><td>: mask that specifies bits that trigger int0. </td></tr>
+    <tr><td class="paramname">int1mask</td><td>: mask that specifies bits that trigger in1. </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return .</dd></dl>
+<p>Descriptions : Activates INT0 OR DISABLES , interrupt for port_t at a specified priority level . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pr_level</td><td>: specifies the priority level for INT0 . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a port . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return</dd></dl>
+<p>Descriptions : Activates INT1 / OR DISABLES , interrupt for port_t at a specified priority level . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pr_level</td><td>: specifies the priority level for INT1 . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a port . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return</dd></dl>
+<p>Description : gives int0 and int1 flags for the specified port. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port_t</td><td>: pointer to the port . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: returns a uint8_t , which gives the interrupt flags ( first 2 bits ) .</dd></dl>
+<p>Description : Initializes Virtual ports by mapping actual ports into memory mapped IO , to 0x3F , this function must be called before using VPORT Macros. NOTE : VPORT0_MAP : is the mapping of VPORT0 , it can be mapped to any ( PORTA,PORTB,PORTC,PORTD ) by using appropriate defines. VPORT1_MAP : is the mapping of VPORT1 , it can be mapped to any ( PORTA,PORTB,PORTC,PORTD ) by using appropriate defines. VPORT2_MAP : is the mapping of VPORT2 , it can be mapped to any ( PORTA,PORTB,PORTC,PORTD ) by using appropriate defines. VPORT3_MAP : is the mapping of VPORT3 , it can be mapped to any ( PORTA,PORTB,PORTC,PORTD ) by using appropriate defines. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ad58f83f681ce016061f03153f9f97f8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad58f83f681ce016061f03153f9f97f8d">&#9670;&nbsp;</a></span>pin_dir</h2>
+<a id="ad37e9b64ed1e8144b54b38e3ed1feb99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37e9b64ed1e8144b54b38e3ed1feb99">&#9670;&nbsp;</a></span>pin_dir</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pin_dir</td>
+          <td class="memname"><a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a> pin_dir</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -316,7 +520,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">    </div><div class="line">    port_t-&gt;OUTSET = ( 1 &lt;&lt; pin_num )</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">    </div><div class="line">    port_t-&gt;OUTSET = ( 1 &lt;&lt; pin_num )</div></div><!-- fragment --><p>Description : Sets a pin ( non rmw ). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_num</td><td>: pin number . </td></tr>
+    <tr><td class="paramname">port_t</td><td>: pointer to a PORT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void : no return . . </dd></dl>
+
 </div>
 </div>
 <a id="a0d15a015daeedf1d6354a6cb30a186f9"></a>
@@ -340,7 +552,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="GPIO_8h.html#ad58f83f681ce016061f03153f9f97f8d">pin_dir</a> ( port_t-&gt;DIRSET = ( 1 &lt;&lt; pin_num ) ) <a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a> <a class="el" href="GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880">opcconfig</a> <a class="el" href="GPIO_8h.html#aac1670a58a22de6af7ddd5aecf55bfe7">iscconfig</a> sense_config</td>
+          <td class="memname"><a class="el" href="GPIO_8h.html#ad37e9b64ed1e8144b54b38e3ed1feb99">pin_dir</a> ( port_t-&gt;DIRSET = ( 1 &lt;&lt; pin_num ) ) <a class="el" href="structPORT__struct.html">PORT_t</a> <a class="el" href="GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6">pindir</a> <a class="el" href="GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880">opcconfig</a> <a class="el" href="GPIO_8h.html#aac1670a58a22de6af7ddd5aecf55bfe7">iscconfig</a> sense_config</td>
         </tr>
       </table>
 </div><div class="memdoc">

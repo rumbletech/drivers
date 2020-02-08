@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wiredand_5fz',['WIREDAND_Z',['../GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880ace5b6889d02b9c9df240c0d89b974902',1,'GPIO.h']]],
-  ['wiredor_5fpulldown',['WIREDOR_PULLDOWN',['../GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880a9993188b97aa5282e5d98de19991081f',1,'GPIO.h']]],
-  ['wiredor_5fz',['WIREDOR_Z',['../GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880abeda159f8fa68bcb4c4403c6982e2b85',1,'GPIO.h']]]
+  ['rc2mhz',['RC2MHZ',['../sysclk_8h.html#a73fd98a49829936a3eacadf018147c42a936b18488bc9d73dfdc0d69f13baf79a',1,'sysclk.h']]],
+  ['rc32khz',['RC32KHZ',['../sysclk_8h.html#a73fd98a49829936a3eacadf018147c42adcae4f79b595ad526606eacc2f6e975c',1,'sysclk.h']]],
+  ['rc32mhz',['RC32MHZ',['../sysclk_8h.html#a73fd98a49829936a3eacadf018147c42aed6b8e5f3d6008d687b02527ec2a3fe5',1,'sysclk.h']]]
 ];

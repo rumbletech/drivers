@@ -1,0 +1,15 @@
+digraph "target_ATXMEGA32A4/UART" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_4d3086cb5a005cf66789cee29374f6b0 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="target_ATXMEGA32A4" fontname="Helvetica", fontsize="10", URL="dir_4d3086cb5a005cf66789cee29374f6b0.html"]
+  subgraph clusterdir_d35678748af7132c48a06c0dd42869aa {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_d35678748af7132c48a06c0dd42869aa.html"];
+    dir_d35678748af7132c48a06c0dd42869aa [shape=plaintext label="UART"];
+    dir_0bef8f48b1229cbb0447c18645a1b01e [shape=box label="debug_ctc" color="black" fillcolor="white" style="filled" URL="dir_0bef8f48b1229cbb0447c18645a1b01e.html"];
+    dir_579353f2ddd3539f32f2933e154e8782 [shape=box label="uart_debug" color="black" fillcolor="white" style="filled" URL="dir_579353f2ddd3539f32f2933e154e8782.html"];
+    dir_25f226aa6bd4c82232a00ec1423fd112 [shape=box label="uart_ring_buffer" color="black" fillcolor="white" style="filled" URL="dir_25f226aa6bd4c82232a00ec1423fd112.html"];
+  }
+  }
+}

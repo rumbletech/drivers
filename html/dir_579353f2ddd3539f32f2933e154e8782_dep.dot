@@ -1,0 +1,9 @@
+digraph "target_ATXMEGA32A4/UART/uart_debug" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d35678748af7132c48a06c0dd42869aa {
+    graph [ bgcolor="#ddddee", pencolor="black", label="UART" fontname="Helvetica", fontsize="10", URL="dir_d35678748af7132c48a06c0dd42869aa.html"]
+  dir_579353f2ddd3539f32f2933e154e8782 [shape=box, label="uart_debug", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_579353f2ddd3539f32f2933e154e8782.html"];
+  }
+}

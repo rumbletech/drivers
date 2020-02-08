@@ -1,0 +1,9 @@
+digraph "target_ATXMEGA32A4/UART/uart_ring_buffer" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d35678748af7132c48a06c0dd42869aa {
+    graph [ bgcolor="#ddddee", pencolor="black", label="UART" fontname="Helvetica", fontsize="10", URL="dir_d35678748af7132c48a06c0dd42869aa.html"]
+  dir_25f226aa6bd4c82232a00ec1423fd112 [shape=box, label="uart_ring_buffer", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_25f226aa6bd4c82232a00ec1423fd112.html"];
+  }
+}

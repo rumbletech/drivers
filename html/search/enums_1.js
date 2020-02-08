@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opcconfig',['opcconfig',['../GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880',1,'GPIO.h']]]
+  ['iscconfig',['iscconfig',['../GPIO_8h.html#aac1670a58a22de6af7ddd5aecf55bfe7',1,'GPIO.h']]]
 ];

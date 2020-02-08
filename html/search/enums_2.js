@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pindir',['pindir',['../GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6',1,'GPIO.h']]]
+  ['opcconfig',['opcconfig',['../GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880',1,'GPIO.h']]]
 ];

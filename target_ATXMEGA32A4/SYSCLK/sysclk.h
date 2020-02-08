@@ -11,9 +11,7 @@
 #ifndef SYSCLK_TOKEN
 #define SYSCLK_TOKEN 1 
 
-#include <avr/io.h>
-#include <stdint.h>
-#include <stdlib.h>
+#include "../GENERAL/header.h"
 
 
 /** A prescaler values , can be ored with PSCBC_DIV to generate prescalers for the peipherals

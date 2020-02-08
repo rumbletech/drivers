@@ -1,0 +1,10 @@
+digraph "target_ATXMEGA32A4/UART/uart.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="target_ATXMEGA32A4\l/UART/uart.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="target_ATXMEGA32A4\l/UART/uart.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uart_8c.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="target_ATXMEGA32A4\l/UART/uart_ring_buffer\l/uart_intd.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uart__intd_8c.html"];
+}

@@ -1,8 +1,8 @@
 
 
-#include "uart.h"
+#include "../uart.h"
+#define F_CPU 2000000
 #include <util/delay.h>
-#include "../SYSCLK/sysclk.h"
 
 
 

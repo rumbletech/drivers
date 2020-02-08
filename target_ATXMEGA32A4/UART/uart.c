@@ -15,6 +15,7 @@
 
 
 
+
 void uart_port_asynch_xmega32a4 ( USART_t* usart_port ) {
 	
 		
@@ -195,7 +196,7 @@ void uartb_transmit ( uint8_t byte , USART_t* usart_port )  {
 
 uint8_t uartb_receive ( USART_t* usart_port ) {
 	
-	while( !( usart_port->STATUS * ( 1 << USART_RXCIF_bp ) ) ); 
+	while( !( usart_port->STATUS & ( 1 << USART_RXCIF_bp ) ) ); 
 	
 	return usart_port->DATA ; 
 	
@@ -208,7 +209,7 @@ uint8_t uartb_transceive ( uint8_t byte ,USART_t* usart_port ) {
 		
 	usart_port->DATA = byte; 
 	
-	while( !( usart_port->STATUS * ( 1 << USART_RXCIF_bp ) ) ); // receiver should have also finished
+	while( !( usart_port->STATUS & ( 1 << USART_RXCIF_bp ) ) ); // receiver should have also finished
 
 return usart_port->DATA ; // Return received byte 
 	
@@ -231,7 +232,7 @@ uint8_t uartnb_transmit( uint8_t byte , USART_t* usart_port ) {
 
 int16_t uartnb_receive ( USART_t* usart_port ){
 	
-	if ( ( usart_port->STATUS * ( 1 << USART_RXCIF_bp ) ) ){
+	if ( ( usart_port->STATUS & ( 1 << USART_RXCIF_bp ) ) ){
 	return usart_port->DATA ;
 }
 
@@ -253,7 +254,7 @@ void uart_print ( uint8_t* buff  , USART_t* usart_port ) {
 
 void uart_print_num ( int32_t val  , uint8_t base  , uint8_t termination , USART_t* usart_port ) {
 	
-	uint8_t itoa_buff[11] ;
+	uint8_t itoa_buff[32] ;
 	
 	itoa( val , itoa_buff , base ) ;
 	

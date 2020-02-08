@@ -11,9 +11,8 @@
  
  #ifndef GPIO_TOKEN
  #define GPIO_TOKEN 1 
-#include <avr/io.h>
-#include <stdint.h>
-#include <stdlib.h>
+
+
 #include "../GENERAL/header.h"
 
 

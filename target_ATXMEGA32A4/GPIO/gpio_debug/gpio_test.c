@@ -1,9 +1,9 @@
 
-#define F_CPU 32000000UL
 
-#include "GPIO.h"
+
+#include "../GPIO.h"
 #include <util/delay.h>
-#include "../SYSCLK/sysclk.h"
+#include "../../SYSCLK/sysclk.h"
 
 
 //avr-gcc -Os -mmcu=atxmega32a4 -o gpio_test.o gpio_test.c; avr-objcopy -O ihex gpio_test.o gpio_test.hex; sudo avrdude -p ATXMEGA32A4 -c avrispmkII -P usb -U flash:w:gpio_test.hex

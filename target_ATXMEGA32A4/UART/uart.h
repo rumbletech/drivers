@@ -12,18 +12,41 @@
 
 
 
-#include <avr/io.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-#include "../GPIO/GPIO.h"
 #include "../GENERAL/header.h"
 
 
+/** Uncomment to activate the ring buffer on any of these uart modules . */
+/********************************************************************************************************************************/
+
+#define USARTC0_RING 1
+//#define USARTC1_RING 1
+//#define USARTD0_RING 1
+//#define USARTD1_RING 1
+//#define USARTE0_RING 1
 
 
+/********************************************************************************************************************************/
+
+/** UART RING BUFFER SIZES **/
+/********************************************************************************************************************************/
+
+#define USARTC0_TXBUFF_SIZE 256
+#define USARTC0_RXBUFF_SIZE 256
+
+#define USARTC1_TXBUFF_SIZE 256
+#define USARTC1_RXBUFF_SIZE 256
+ 
+#define USARTD0_TXBUFF_SIZE 256
+#define USARTD0_RXBUFF_SIZE 256
+
+#define USARTD1_TXBUFF_SIZE 256
+#define USARTD1_RXBUFF_SIZE 256
+
+#define USARTE0_TXBUFF_SIZE 256
+#define USARTE0_RXBUFF_SIZE 256
+
+
+/********************************************************************************************************************************/
 // Check for this return value from baud_calc() , it indicates that no suitable baud configuration is found . 
 
 #define BAUD_ERR_VAL (uint16_t)0XFFFF
@@ -107,7 +130,7 @@ typedef enum{
  * @param u2x           : u2x used or not .
  * */
 
-static inline uint16_t baud_calc ( uint32_t baud_rate , uint32_t f_perph ,uint8_t data_numbits ,uint8_t u2x ) {
+__attribute__((always_inline)) static inline uint16_t baud_calc ( uint32_t baud_rate , uint32_t f_perph ,uint8_t data_numbits ,uint8_t u2x ) {
 	
 	uint16_t bsel[15] ;
 	int8_t opt_bscale = 0 ;
@@ -444,5 +467,74 @@ void uart_print_num ( int32_t val  , uint8_t base  , uint8_t termination , USART
  * */
  
 void uart_debug_9600 ( void );
+
+/** Description : The following calls are used on the module that has its ring buffer enabled 
+ * to Enable a ring buffer simple #define USARTXX_RING anywhere the header file can see it , mainly in the uart.h , or header.h .
+ */
+ 
+ 
+ /** Description : writes data pointed to by data_ptr , with length of len , on the ring buffer given by ring_buff
+  * @param ring_buff : can be one of the following ( USARTC0_RING, USARTC1_RING , USARTD0_RING , USARTD1_RING , USARTE0_RING ).
+  * @param data_ptr  : pointer to the data to be transmitted .
+  * @param len       : number of bytes to write .
+  * @retval -2       : ring buffer is not enabled for the module .
+  * @retval -1       : buffer doesn't have free ( len ) of bytes or the buffer is full .
+  * @retval  1       : successfully written to the fifo.
+  * */
+
+int16_t uart_write( uint8_t ring_buff , uint8_t* data_ptr , uint16_t len  );
+
+ /** Description : this function returns a single byte from the fifo buffer .
+  * @param ring_buff : can be one of the following ( USARTC0_RING, USARTC1_RING , USARTD0_RING , USARTD1_RING , USARTE0_RING ).
+  * @retval -2       : ring buffer is not enabled for the module .
+  * @retval -1       : buffer is empty .
+  * @retval  bytes   : returns the byte from the fifo.
+  * */
+
+
+int16_t uart_get( uint8_t ring_buff );
+
+ /** Description : this function returns len' length bytes from the fifo buffer .
+  * @param ring_buff : can be one of the following ( USARTC0_RING, USARTC1_RING , USARTD0_RING , USARTD1_RING , USARTE0_RING ).
+  * @param ptr       : pointer to a buffer that will store the data.
+  * @param len       : number of bytes to wait for .
+  * @retval -2       : ring buffer is not enabled for the module .
+  * @retval -1       : buffer is empty .
+  * @retval  1       : successfully written (len) bytes into ptr.
+  * */
+
+
+int16_t uart_bget ( uint8_t ring_buff , uint8_t * ptr , uint16_t len );
+
+ /** Description : writes data pointed to by data_ptr , with length of len , on the ring buffer given by ring_buff
+  * NOTE : this function is the same as uart_write() but this one blocks until the data is completely shifted out of the buffer.
+  * @param ring_buff : can be one of the following ( USARTC0_RING, USARTC1_RING , USARTD0_RING , USARTD1_RING , USARTE0_RING ).
+  * @param data_ptr  : pointer to the data to be transmitted .
+  * @param len       : number of bytes to write .
+  * @retval -2       : ring buffer is not enabled for the module .
+  * @retval -1       : buffer doesn't have free ( len ) of bytes or the buffer is empty.
+  * @retval  1       : successfully written to the fifo.
+  * */
+
+int16_t uart_bwrite( uint8_t ring_buff , uint8_t* data_ptr , uint16_t len  );
+
+/** Description : This function returns the number of bytes currently in the receive buffer ( received bytes number ).
+  * @param ring_buff : can be one of the following ( USARTC0_RING, USARTC1_RING , USARTD0_RING , USARTD1_RING , USARTE0_RING ).
+  * @retval -2       : no ring buffer is enabled for the module chosen.
+  * @retval byte_num : returns the number of bytes in the receive buffer. 
+*/
+
+int16_t get_rx_numbytes ( uint8_t ring_buff );
+
+/** Description : This function returns the number of free bytes ( free space ) in the tx buffer.
+  * @param ring_buff : can be one of the following ( USARTC0_RING, USARTC1_RING , USARTD0_RING , USARTD1_RING , USARTE0_RING ).
+  * @retval -2       : no ring buffer is enabled for the module chosen.
+  * @retval byte_num : returns the number of free bytes in the tx buffer. 
+*/
+
+int16_t get_tx_numbytes ( uint8_t ring_buff );
+
+
+int16_t flush_rx_buff ( uint8_t ring_buff );
 
 #endif

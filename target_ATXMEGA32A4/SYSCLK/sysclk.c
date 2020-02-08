@@ -13,7 +13,7 @@
 
 
 // to do 
-
+/*
 void sysclk_switch ( sys_clksel new_clksrc  , sys_clksel pll_clksel ){
 	
 	switch ( new_clksrc ) {
@@ -54,7 +54,7 @@ void sysclk_switch ( sys_clksel new_clksrc  , sys_clksel pll_clksel ){
 }
 
 
-
+*/
 
 
 

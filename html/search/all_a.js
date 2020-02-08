@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ocd_5fstruct',['OCD_struct',['../structOCD__struct.html',1,'']]],
-  ['opcconfig',['opcconfig',['../GPIO_8h.html#a38bcd6d687b6aa6436ffc6dccee5a880',1,'GPIO.h']]],
-  ['osc_5fstruct',['OSC_struct',['../structOSC__struct.html',1,'']]],
-  ['output',['OUTPUT',['../GPIO_8h.html#a9168a2726f4aaa3853816d85ea02b0f6a2ab08d3e103968f5f4f26b66a52e99d6',1,'GPIO.h']]]
+  ['nvm_5ffuses_5fstruct',['NVM_FUSES_struct',['../structNVM__FUSES__struct.html',1,'']]],
+  ['nvm_5flockbits_5fstruct',['NVM_LOCKBITS_struct',['../structNVM__LOCKBITS__struct.html',1,'']]],
+  ['nvm_5fprod_5fsignatures_5fstruct',['NVM_PROD_SIGNATURES_struct',['../structNVM__PROD__SIGNATURES__struct.html',1,'']]],
+  ['nvm_5fstruct',['NVM_struct',['../structNVM__struct.html',1,'']]]
 ];
